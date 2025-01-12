@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-01-11)
+## Unreleased (2025-01-12)
 
 <section class="commits">
 
@@ -12,6 +12,8 @@
 
 <details>
 
+-   [`0db19ee`](https://github.com/stdlib-js/stdlib/commit/0db19eee3d3827e40cdbb9098fcec66205925d15) - **docs:** improve example clarity _(by Athan Reines)_
+-   [`610eff4`](https://github.com/stdlib-js/stdlib/commit/610eff41484d40b5bce72d51099b624c55955ee9) - **docs:** update examples _(by Athan Reines)_
 -   [`b24284b`](https://github.com/stdlib-js/stdlib/commit/b24284bcc4a781d2ef01efc6bb1f0c8fd631dcb3) - **test:** improve test values to resolve ambiguity in expected values _(by Athan Reines)_
 -   [`e0cef99`](https://github.com/stdlib-js/stdlib/commit/e0cef995e884021db3001dc1a3cfef0ca7b368c2) - **style:** remove extra spaces for regular expressions in publish script _(by Philipp Burckhardt)_
 -   [`e712640`](https://github.com/stdlib-js/stdlib/commit/e71264067123dab80b4f387574583d3c176523d9) - **docs:** fix offset types _(by Athan Reines)_

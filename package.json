@@ -40,6 +40,7 @@
     "@stdlib/assert-is-error": "^0.2.2",
     "@stdlib/blas-base-assert-is-layout": "^0.0.2",
     "@stdlib/math-base-special-fast-min": "^0.3.0",
+    "@stdlib/ndarray-base-assert-is-column-major-string": "github:stdlib-js/ndarray-base-assert-is-column-major-string#main",
     "@stdlib/ndarray-base-assert-is-row-major": "^0.2.2",
     "@stdlib/ndarray-base-unary-loop-interchange-order": "^0.2.1",
     "@stdlib/string-format": "^0.2.2",

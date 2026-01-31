@@ -2,9 +2,19 @@
 
 > Package changelog.
 
-<section class="release" id="unreleased">
+<section class="release" id="v0.2.0">
 
-## Unreleased (2025-06-30)
+## 0.2.0 (2026-01-31)
+
+<section class="features">
+
+### Features
+
+-   [`59f3ca9`](https://github.com/stdlib-js/stdlib/commit/59f3ca930abd58ce6d8ce9d74f0389b7d7f0e847) - add C implementation
+
+</section>
+
+<!-- /.features -->
 
 <section class="commits">
 
@@ -12,6 +22,7 @@
 
 <details>
 
+-   [`59f3ca9`](https://github.com/stdlib-js/stdlib/commit/59f3ca930abd58ce6d8ce9d74f0389b7d7f0e847) - **feat:** add C implementation _(by Athan Reines)_
 -   [`5fa268b`](https://github.com/stdlib-js/stdlib/commit/5fa268b45966db0bf625010a1e5cbda152fbf648) - **refactor:** use base assertion utility _(by Athan Reines)_
 -   [`2e48726`](https://github.com/stdlib-js/stdlib/commit/2e48726f243a6aec47a6c1e748cfd0faefea9216) - **docs:** update examples _(by Athan Reines)_
 -   [`1f5d811`](https://github.com/stdlib-js/stdlib/commit/1f5d811a759c1604e8620a12fad29dde86bfff50) - **docs:** update examples _(by Athan Reines)_

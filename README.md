@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import dlacpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/lapack-base-dlacpy@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/lapack-base-dlacpy/tags). For example,
+
+```javascript
 import dlacpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/lapack-base-dlacpy@v0.2.0-deno/mod.js';
 ```
 
@@ -154,7 +159,7 @@ import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
 import numel from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-numel@deno/mod.js';
 import shape2strides from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-shape2strides@deno/mod.js';
-import dlacpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/lapack-base-dlacpy@v0.2.0-deno/mod.js';
+import dlacpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/lapack-base-dlacpy@deno/mod.js';
 
 var shape = [ 5, 8 ];
 var order = 'row-major';

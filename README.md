@@ -35,32 +35,14 @@ limitations under the License.
 
 > Copy all or part of a matrix `A` to another matrix `B`.
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/lapack-base-dlacpy
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var dlacpy = require( '@stdlib/lapack-base-dlacpy' );
+import dlacpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/lapack-base-dlacpy@deno/mod.js';
 ```
 
 #### dlacpy( order, uplo, M, N, A, LDA, B, LDB )
@@ -68,7 +50,7 @@ var dlacpy = require( '@stdlib/lapack-base-dlacpy' );
 Copies all or part of a matrix `A` to another matrix `B`.
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 
 var A = new Float64Array( [ 1.0, 2.0, 3.0, 4.0 ] );
 var B = new Float64Array( 4 );
@@ -93,7 +75,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 
 // Initial arrays...
 var A0 = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0 ] );
@@ -112,7 +94,7 @@ dlacpy( 'row-major', 'all', 2, 2, A1, 2, B1, 2 );
 Copies all or part of a matrix `A` to another matrix `B` using alternative indexing semantics.
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 
 var A = new Float64Array( [ 1.0, 2.0, 3.0, 4.0 ] );
 var B = new Float64Array( [ 0.0, 0.0, 0.0, 0.0 ] );
@@ -138,7 +120,7 @@ The function has the following parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameters support indexing semantics based on starting indices. For example,
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 
 var A = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0 ] );
 var B = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -168,11 +150,11 @@ dlacpy.ndarray( 'all', 2, 2, A, 2, 1, 1, B, 2, 1, 2 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var ndarray2array = require( '@stdlib/ndarray-base-to-array' );
-var uniform = require( '@stdlib/random-array-discrete-uniform' );
-var numel = require( '@stdlib/ndarray-base-numel' );
-var shape2strides = require( '@stdlib/ndarray-base-shape2strides' );
-var dlacpy = require( '@stdlib/lapack-base-dlacpy' );
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-array@deno/mod.js';
+import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
+import numel from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-numel@deno/mod.js';
+import shape2strides from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-shape2strides@deno/mod.js';
+import dlacpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/lapack-base-dlacpy@deno/mod.js';
 
 var shape = [ 5, 8 ];
 var order = 'row-major';
@@ -200,160 +182,7 @@ console.log( ndarray2array( B, shape, strides, 0, order ) );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/lapack/base/dlacpy.h"
-```
-
-#### c_dlacpy( layout, uplo, M, N, \*A, LDA, \*B, LDB )
-
-Copies all or part of a matrix `A` to another matrix `B`.
-
-```c
-#include "stdlib/lapack/base/shared.h"
-
-const double A[] = { 1.0, 2.0, 3.0, 4.0 };
-double B[] = { 0.0, 0.0, 0.0, 0.0 };
-
-c_dlacpy( LAPACK_ROW_MAJOR, LAPACK_UPPER_TRIANGLE, 2, 2, A, 2, B, 2 );
-```
-
-The function accepts the following arguments:
-
--   **order**: `[in] LAPACK_LAYOUT` storage layout.
--   **uplo**: `[in] int` specifies whether to copy the upper or lower triangular/trapezoidal part of a matrix `A`.
--   **M**: `[in] LAPACK_INT` number of rows in `A`.
--   **N**: `[in] LAPACK_INT` number of columns in `A`.
--   **A**: `[in] double*` input matrix.
--   **LDA**: `[in] LAPACK_INT` stride of the first dimension of `A` (a.k.a., leading dimension of the matrix `A`).
--   **B**: `[out] double*` output matrix.
--   **LDB**: `[in] LAPACK_INT` stride of the first dimension of `B` (a.k.a., leading dimension of the matrix `B`).
-
-```c
-LAPACK_INT c_dlacpy( const LAPACK_LAYOUT layout, const int uplo, const LAPACK_INT M, const LAPACK_INT N, const double *A, const LAPACK_INT LDA, double *B, const LAPACK_INT LDB );
-```
-
-#### c_dlacpy_ndarray( uplo, M, N, \*A, sa1, sa2, oa, \*B, sb1, sb2, ob )
-
-Copies all or part of a matrix `A` to another matrix `B` using alternative indexing semantics.
-
-```c
-#include "stdlib/lapack/base/shared.h"
-
-const double A[] = { 1.0, 2.0, 3.0, 4.0 };
-double B[] = { 0.0, 0.0, 0.0, 0.0 };
-
-c_dlacpy_ndarray( LAPACK_UPPER_TRIANGLE, 2, 2, A, 2, 1, 0, B, 2, 1, 0 );
-```
-
-The function accepts the following arguments:
-
--   **uplo**: `[in] int` specifies whether to copy the upper or lower triangular/trapezoidal part of a matrix `A`.
--   **M**: `[in] LAPACK_INT` number of rows in `A`.
--   **N**: `[in] LAPACK_INT` number of columns in `A`.
--   **A**: `[in] double*` input matrix.
--   **sa1**: `[in] LAPACK_INT` stride of the first dimension of `A`.
--   **sa2**: `[in] LAPACK_INT` stride of the second dimension of `A`.
--   **oa**: `[in] LAPACK_INT` starting index for `A`.
--   **B**: `[out] double*` output matrix.
--   **sb1**: `[in] LAPACK_INT` stride of the first dimension of `B`.
--   **sb2**: `[in] LAPACK_INT` stride of the second dimension of `B`.
--   **ob**: `[in] LAPACK_INT` starting index for `B`.
-
-```c
-LAPACK_INT c_dlacpy_ndarray( const int uplo, const LAPACK_INT M, const LAPACK_INT N, const double *A, const LAPACK_INT strideA1, const LAPACK_INT strideA2, const LAPACK_INT offsetA, double *B, const LAPACK_INT strideB1, const LAPACK_INT strideB2, const LAPACK_INT offsetB );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/lapack/base/dlacpy.h"
-#include "stdlib/lapack/base/shared.h"
-#include <stdio.h>
-
-int main( void ) {
-    // Define a 3x3 input matrix stored in row-major order:
-    const double A[ 3*3 ] = {
-        1.0, 2.0, 3.0,
-        4.0, 5.0, 6.0,
-        7.0, 8.0, 9.0
-    };
-
-    // Define a 3x3 output matrix:
-    double B[ 3*3 ] = {
-        0.0, 0.0, 0.0,
-        0.0, 0.0, 0.0,
-        0.0, 0.0, 0.0
-    };
-
-    // Specify the number of elements along each dimension of `A`:
-    const int M = 3;
-    const int N = 3;
-
-    // Copy elements from the upper triangle of `A` to `B`:
-    c_dlacpy( LAPACK_ROW_MAJOR, LAPACK_UPPER_TRIANGLE, M, N, A, N, B, N );
-
-    // Print the result:
-    for ( int i = 0; i < M; i++ ) {
-        for ( int j = 0; j < N; j++ ) {
-            printf( "B[ %i, %i ] = %lf\n", i, j, B[ (i*N)+j ] );
-        }
-    }
-
-    // Copy elements from the lower triangle of `A` to `B` using alternative indexing semantics:
-    c_dlacpy_ndarray( LAPACK_LOWER_TRIANGLE, M, N, A, N, 1, 0, B, N, 1, 0 );
-
-    // Print the result:
-    for ( int i = 0; i < M; i++ ) {
-        for ( int j = 0; j < N; j++ ) {
-            printf( "B[ %i, %i ] = %lf\n", i, j, B[ (i*N)+j ] );
-        }
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -372,7 +201,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
